@@ -1,87 +1,127 @@
-// 밝고 깔끔한 커스텀 스타일
+// 예쁜 분홍색 테마 - 여백 최소화
 
-// 색상 변수 정의
-$brand-color: #4A90E2;           // 밝은 파란색
-$brand-color-light: #7BAAE8;     // 더 밝은 파란색
-$brand-color-dark: #2E5C8A;      // 진한 파란색
-$background-color: #FAFBFC;      // 매우 밝은 회색
-$code-background: #F6F8FA;       // 코드 배경
-$border-color: #E1E4E8;          // 테두리 색상
-$text-color: #24292E;            // 본문 텍스트
-$link-color: #4A90E2;            // 링크 색상
-$link-hover: #2E5C8A;            // 링크 호버
-$success-color: #28A745;         // 초록색 악센트
-$warning-color: #FFC107;         // 노란색 악센트
+// 색상 변수 정의 (분홍색 팔레트)
+$brand-color: #FF6B9D;           // 메인 분홍색
+$brand-color-light: #FFB3D9;     // 밝은 분홍색
+$brand-color-dark: #C7476F;      // 진한 분홍색
+$accent-color: #FF8FAB;          // 악센트 분홍색
+$background-color: #FFF5F8;      // 연한 분홍 배경
+$code-background: #FFE8F0;       // 코드 배경
+$border-color: #FFD1E3;          // 테두리 색상
+$text-color: #2D2D2D;            // 본문 텍스트
+$link-color: #FF6B9D;            // 링크 색상
+$link-hover: #C7476F;            // 링크 호버
 
 // 전역 배경색
 body {
-  background-color: $background-color;
+  background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%);
   color: $text-color;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.7;
+  margin: 0;
+  padding: 0;
 }
 
-// 헤더 스타일
+// 헤더 스타일 - 커스터마이징
 .site-header {
-  background-color: #FFFFFF;
-  border-top: 5px solid $brand-color;
-  border-bottom: 1px solid $border-color;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, #FF6B9D 0%, #FFB3D9 100%);
+  border-top: none;
+  border-bottom: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+  min-height: 70px;
+  padding: 0 20px;
+
+  .wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0;
+  }
 
   .site-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: $brand-color-dark;
-    letter-spacing: -0.5px;
-
+    font-size: 32px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    
     &:hover {
-      color: $brand-color;
+      color: #FFF5F8;
       text-decoration: none;
+      transform: scale(1.02);
+      transition: all 0.3s ease;
+    }
+
+    &:before {
+      content: "💖 ";
+      font-size: 28px;
     }
   }
 
-  .site-nav .page-link {
-    color: $text-color;
-    font-weight: 500;
+  .site-nav {
+    background-color: transparent;
+    border: none;
 
-    &:hover {
-      color: $brand-color;
+    .page-link {
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #FFFFFF;
+        transform: translateY(-2px);
+      }
+    }
+
+    .trigger {
+      background-color: rgba(255, 107, 157, 0.95);
+      border-radius: 8px;
+      padding: 10px;
     }
   }
 }
 
-// 메인 콘텐츠
+// 메인 콘텐츠 - 여백 최소화
 .page-content {
   background-color: transparent;
-  padding: 40px 0;
+  padding: 20px 0;
+  flex: 1 0 auto;
 }
 
 .wrapper {
-  max-width: 900px;
-  background-color: #FFFFFF;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.home {
+  .wrapper {
+    padding: 0 15px;
+  }
 }
 
 // 포스트 목록
 .post-list {
   list-style: none;
   margin-left: 0;
+  padding-left: 0;
 
   > li {
-    margin-bottom: 40px;
-    padding: 24px;
-    background-color: $code-background;
-    border-radius: 8px;
-    border-left: 4px solid $brand-color;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F8 100%);
+    border-radius: 12px;
+    border-left: 5px solid $brand-color;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1);
     transition: all 0.3s ease;
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+      transform: translateX(5px) translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.25);
+      border-left-color: $accent-color;
     }
   }
 }
@@ -90,6 +130,7 @@ body {
   font-size: 26px;
   font-weight: 700;
   color: $brand-color-dark;
+  display: inline-block;
 
   &:hover {
     color: $brand-color;
@@ -99,26 +140,37 @@ body {
 
 .post-meta {
   font-size: 14px;
-  color: #6A737D;
+  color: #999;
   margin-top: 8px;
+  
+  &:before {
+    content: "📅 ";
+  }
 }
 
 // 포스트 내용
 .post-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 2px solid $border-color;
+  border-bottom: 3px solid $border-color;
+  text-align: center;
 }
 
 .post-title {
   font-size: 36px;
   font-weight: 800;
-  color: $brand-color-dark;
+  color: $brand-color;
   line-height: 1.3;
   margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.1);
 }
 
 .post-content {
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.1);
+
   h1, h2, h3, h4, h5, h6 {
     color: $brand-color-dark;
     font-weight: 700;
@@ -129,7 +181,7 @@ body {
   h1 { font-size: 32px; }
   h2 {
     font-size: 28px;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
     border-bottom: 2px solid $border-color;
   }
   h3 { font-size: 24px; }
@@ -142,21 +194,21 @@ body {
 
   a {
     color: $link-color;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
 
     &:hover {
       color: $link-hover;
-      border-bottom-color: $link-hover;
+      border-bottom-color: $accent-color;
     }
   }
 
   code {
     background-color: $code-background;
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 3px 8px;
+    border-radius: 5px;
     font-size: 14px;
     color: #E83E8C;
     border: 1px solid $border-color;
@@ -164,9 +216,9 @@ body {
 
   pre {
     background-color: $code-background;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    padding: 16px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+    padding: 20px;
     overflow-x: auto;
 
     code {
@@ -178,14 +230,15 @@ body {
   }
 
   blockquote {
-    border-left: 4px solid $brand-color;
-    background-color: $code-background;
+    border-left: 5px solid $brand-color;
+    background: linear-gradient(90deg, $code-background 0%, transparent 100%);
     padding: 16px 20px;
     margin: 24px 0;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 10px 10px 0;
 
     p {
       margin-bottom: 0;
+      color: $brand-color-dark;
     }
   }
 
@@ -194,59 +247,117 @@ body {
 
     li {
       margin-bottom: 8px;
+      
+      &::marker {
+        color: $brand-color;
+      }
     }
   }
 
   img {
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.2);
   }
 }
 
-// 푸터
+// 푸터 - 커스터마이징
 .site-footer {
-  background-color: #FFFFFF;
-  border-top: 1px solid $border-color;
-  padding: 30px 0;
+  background: linear-gradient(135deg, #FFB3D9 0%, #FF6B9D 100%);
+  border-top: none;
+  padding: 40px 20px 30px;
   margin-top: 60px;
+  color: #FFFFFF;
+  box-shadow: 0 -4px 20px rgba(255, 107, 157, 0.3);
+
+  .wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 
   .footer-heading {
-    color: $brand-color-dark;
-    font-weight: 600;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-col-wrapper {
+    color: rgba(255, 255, 255, 0.9);
   }
 
   a {
-    color: $link-color;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
 
     &:hover {
-      color: $link-hover;
+      color: #FFF5F8;
+      border-bottom-color: #FFFFFF;
     }
+  }
+
+  .social-media-list {
+    a {
+      color: #FFFFFF;
+      
+      &:hover {
+        color: #FFF5F8;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
   }
 }
 
 // 버튼 스타일
 .button, button, input[type="submit"] {
-  background-color: $brand-color;
+  background: linear-gradient(135deg, $brand-color 0%, $accent-color 100%);
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
 
   &:hover {
-    background-color: $brand-color-dark;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
   }
+}
+
+// 페이지 제목 스타일
+.page-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: $brand-color;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 // 반응형 디자인
 @media screen and (max-width: 800px) {
   .wrapper {
+    padding: 0 10px;
+  }
+
+  .site-header {
+    padding: 0 10px;
+
+    .site-title {
+      font-size: 24px;
+    }
+  }
+
+  .post-content {
     padding: 20px;
-    border-radius: 0;
   }
 
   .post-title {
@@ -258,13 +369,17 @@ body {
     h2 { font-size: 22px; }
     h3 { font-size: 20px; }
   }
+
+  .post-list > li {
+    padding: 15px;
+  }
 }
 
 // 애니메이션
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -272,6 +387,21 @@ body {
   }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .post-content {
   animation: fadeIn 0.6s ease;
+}
+
+.post-list > li {
+  animation: slideIn 0.5s ease;
 }
