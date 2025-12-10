@@ -1,3 +1,19 @@
-remote_theme: pages-themes/cayman@v0.2.0
+title: Dev Scent Choi Blog
+email: chlgudwns10@gmail.com
+description: >-
+  개발 기록 및 기술 블로그입니다.
+baseurl: "" 
+url: "https://dev-scent-choi.github.io/dev-scen-choi.io"
+
+theme: minima
+
+# Minima 설정
+minima:
+  skin: classic
+
+# Markdown 설정
+markdown: kramdown
+
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-feed
+  - jekyll-seo-tag
