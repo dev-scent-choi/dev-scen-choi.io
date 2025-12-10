@@ -2,8 +2,8 @@ title: Dev Scent Choi Blog
 email: chlgudwns10@gmail.com
 description: >-
   개발 기록 및 기술 블로그입니다.
-baseurl: "" 
-url: "https://dev-scent-choi.github.io/dev-scen-choi.io"
+baseurl: "/dev-scen-choi.io"
+url: "https://dev-scent-choi.github.io"
 
 theme: minima
 
