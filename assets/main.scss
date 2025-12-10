@@ -1,5 +1,250 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import "minima";
+@import "minima/skins/{{ site.minima.skin | default: 'classic' }}";
+@import "minima/initialize";
+
+// 예쁜 분홍색 테마 커스터마이징
+
+// 색상 변수 오버라이드
+$brand-color: #FF6B9D !important;
+$brand-color-light: #FFB3D9 !important;
+$brand-color-dark: #C7476F !important;
+$text-color: #2D2D2D !important;
+$background-color: #FFF5F8 !important;
+$code-background-color: #FFE8F0 !important;
+$border-color-01: #FFD1E3 !important;
+
+// 전역 배경
+body {
+  background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%) !important;
+}
+
+// 헤더 스타일
+.site-header {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FFB3D9 100%) !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3) !important;
+  min-height: 70px !important;
+
+  .wrapper {
+    max-width: 100% !important;
+  }
+
+  .site-title {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+
+    &:visited {
+      color: #FFFFFF !important;
+    }
+
+    &:hover {
+      color: #FFF5F8 !important;
+      text-decoration: none !important;
+    }
+
+    &:before {
+      content: "💖 ";
+      font-size: 28px;
+    }
+  }
+
+  .site-nav {
+    .page-link {
+      color: #FFFFFF !important;
+      font-weight: 600 !important;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        color: #FFFFFF !important;
+      }
+    }
+  }
+}
+
+// 메인 콘텐츠
+.wrapper {
+  max-width: 1200px !important;
+  padding: 0 15px !important;
+}
+
+.page-content {
+  padding: 20px 0 !important;
+}
+
+// 포스트 목록
+.post-list {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+
+  > li {
+    margin-bottom: 30px !important;
+    padding: 20px !important;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F8 100%) !important;
+    border-radius: 12px !important;
+    border-left: 5px solid #FF6B9D !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.1) !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      transform: translateX(5px) translateY(-3px) !important;
+      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.25) !important;
+    }
+  }
+}
+
+.post-link {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: #C7476F !important;
+
+  &:visited {
+    color: #C7476F !important;
+  }
+
+  &:hover {
+    color: #FF6B9D !important;
+    text-decoration: none !important;
+  }
+}
+
+.post-meta {
+  font-size: 14px !important;
+  color: #999 !important;
+
+  &:before {
+    content: "📅 ";
+  }
+}
+
+// 포스트 제목
+.post-title {
+  font-size: 36px !important;
+  font-weight: 800 !important;
+  color: #FF6B9D !important;
+  text-align: center !important;
+  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.1) !important;
+}
+
+.post-header {
+  border-bottom: 3px solid #FFD1E3 !important;
+  text-align: center !important;
+}
+
+// 포스트 내용
+.post-content {
+  background-color: #FFFFFF !important;
+  padding: 30px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.1) !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #C7476F !important;
+  }
+
+  h2 {
+    border-bottom: 2px solid #FFD1E3 !important;
+  }
+
+  a {
+    color: #FF6B9D !important;
+    font-weight: 600 !important;
+
+    &:visited {
+      color: #C7476F !important;
+    }
+
+    &:hover {
+      color: #C7476F !important;
+    }
+  }
+
+  code {
+    background-color: #FFE8F0 !important;
+    border: 1px solid #FFD1E3 !important;
+    color: #E83E8C !important;
+  }
+
+  pre {
+    background-color: #FFE8F0 !important;
+    border: 2px solid #FFD1E3 !important;
+  }
+
+  blockquote {
+    border-left: 5px solid #FF6B9D !important;
+    background: linear-gradient(90deg, #FFE8F0 0%, transparent 100%) !important;
+  }
+
+  ul li::marker,
+  ol li::marker {
+    color: #FF6B9D !important;
+  }
+}
+
+// 푸터
+.site-footer {
+  background: linear-gradient(135deg, #FFB3D9 0%, #FF6B9D 100%) !important;
+  border-top: none !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 -4px 20px rgba(255, 107, 157, 0.3) !important;
+
+  .footer-heading {
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .footer-col-wrapper,
+  p {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  a {
+    color: #FFFFFF !important;
+
+    &:visited {
+      color: #FFFFFF !important;
+    }
+
+    &:hover {
+      color: #FFF5F8 !important;
+    }
+  }
+
+  .social-media-list a {
+    color: #FFFFFF !important;
+
+    &:hover {
+      color: #FFF5F8 !important;
+    }
+  }
+}
+
+// 페이지 제목
+.page-heading {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: #FF6B9D !important;
+  text-align: center !important;
+}
+
+// 반응형
+@media screen and (max-width: 800px) {
+  .wrapper {
+    padding: 0 10px !important;
+  }
+
+  .site-header .site-title {
+    font-size: 24px !important;
+  }
+
+  .post-content {
+    padding: 20px !important;
+  }
+}
