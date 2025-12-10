@@ -9,11 +9,24 @@ theme: minima
 
 # Minima 설정
 minima:
-  skin: classic
+  skin: auto
+  social_links:
+    github: dev-scent-choi
 
 # Markdown 설정
 markdown: kramdown
+highlighter: rouge
+
+# 코드 하이라이팅 스타일
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# 페이지네이션
+paginate: 5
+paginate_path: "/blog/page:num/"
